@@ -2,7 +2,14 @@
   --main-font-family: "Roboto", sans-serif;
   --main-color: #212121;
   --second-color: #757575;
-  --hover-focus-color: #2196f3;
+  --active-color: #2196f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 0;
 }
 
 body {
@@ -12,22 +19,68 @@ body {
 
 ul {
   list-style-type: none;
+} 
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container {
+  width: 1600px;
+  padding-left: 215px;
+  padding-right: 215px;
+}
+
+.active:focus,
+.active:hover {
+  color: var(--active-color);
 }
 
 /* HEADER */
-.company-logo-header {
+.global-header {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.global-header .company-logo-header {
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.174;
   text-decoration: none;
   color: #000000;
+  letter-spacing: 0.78px;
 }
 
-.company-logo-header .logo-name-header {
+.global-header .company-logo-header span {
   color: #2196f3;
 }
 
+.global-header .website-navigation {
+  margin-left: 93px;
+  margin-right: 385px;
+}
+
+.global-header .website-navigation ul {
+  display: flex;
+}
+
+.global-header .website-navigation ul li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.global-header .contacts-list-header{
+  display: flex;
+}
+
+.global-header .contacts-list-header li:first-child {
+  margin-right: 40px;
+}
+  
 .navigation-link,
 .contact-link-header {
   font-weight: 500;
@@ -35,77 +88,168 @@ ul {
   line-height: 1.172;
   text-decoration: none;
   color: var(--main-color);
+  letter-spacing: 0.28px;
 }
 
 .contact-link-header {
   color: var(--second-color);
 }
 
-.navigation-link:focus,
-.navigation-link:hover,
-.contact-link-header:focus,
-.contact-link-header:hover,
-.location-link-footer:focus,
-.location-link-footer:hover,
-.contact-link-footer:focus,
-.contact-link-footer:hover {
-  color: var(--hover-focus-color);
+
+/* MAIN: */
+
+/* Hero-section */
+.hero-section {
+  background-color: #2F303A;
+  padding-top: 200px;
+  padding-left: 452px;
+  padding-right: 452px;
+  text-align: center;
 }
 
-/* MAIN: WebStudio */
-.company-motto {
-  background-color: #2f303a;
-}
-
-.company-motto .title {
+.hero-section .hero-header {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.363;
+  letter-spacing: 2.64px;
   text-align: center;
+  width: 696px;
+  margin-bottom: 30px;
 }
 
-.request-service-button {
+.hero-section .cta-button {
   background-color: #2196f3;
   color: #ffffff;
   font-family: var(--main-font-family);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
-  cursor: pointer;
+  letter-spacing: 0.96px;
+  width: 200px;
+  padding: 10px 19px;
+  margin-bottom: 200px;
+  border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 
-.company-quality-title {
+
+/* Company-description-section (1)+(2) */
+
+/* (1) company-qualities-container (1) */
+.company-qualities-container {
+  margin-bottom: 94px;
+}
+
+.company-qualities-container ul {
+  display: flex;
+}
+
+.company-qualities-container ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.company-quality-card {
+  width: 270px;
+}
+
+.company-quality-card .company-quality-card-title {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 1.172;
+  letter-spacing: 0.42px;
+  margin-bottom: 10px;
 }
 
-.company-quality-description {
+.company-quality-card .company-quality-card-description {
   font-size: 14px;
   line-height: 1.714;
+  letter-spacing: 0.42px;
   color: var(--second-color);
 }
 
-.company-services-title,
-.company-employees-title {
+/* (2) company-servicies-container (2) */
+.company-servicies-container {
+  text-align: center;
+}
+
+.company-servicies-container .company-services-header {
   font-size: 36px;
   line-height: 1.172;
+  letter-spacing: 1.08px;
+  margin-bottom: 50px;
 }
 
-.employee-name {
+.company-servicies-container ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Company-team-section */
+.comapny-team-section {
+  background-color: #F5F4FA;
+  width: 1600px;
+  text-align: center;
+}
+
+.comapny-team-container .company-team-header {
+  font-size: 36px;
+  line-height: 1.172;
+  letter-spacing: 1.08px;
+  margin-bottom: 50px;
+}
+
+.comapny-team-container ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-employee-card {
+  background-color: #FFFFFF;
+  padding-bottom: 30px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.company-employee-card .employee-name {
   font-weight: 500;
   line-height: 1.172;
+  letter-spacing: 0.48px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
-.employee-position {
+.company-employee-card .employee-position {
   color: var(--second-color);
   line-height: 1.172;
+  letter-spacing: 0.48px;
 }
 
-/* MAIN: Portfolio */
+
+/* MAIN - PORTFOLIO: Portfolio-section (1)+(2)  */
+
+/* (1) portfolio-filters (2) */
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-filters ul {
+  display: flex;
+}
+
+.portfolio-filters ul li:not(:last-child) {
+  margin-right: 8px;
+}
+  
+.portfolio-filters {
+  margin-bottom: 50px;
+}
+
 .filter-button {
   background-color: #f5f4fa;
   color: var(--main-color);
@@ -113,8 +257,11 @@ ul {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.625;
+  letter-spacing: 0.48px;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
+  padding: 6px 22px;
 }
 
 .filter-button:hover,
@@ -123,40 +270,78 @@ ul {
   background-color: #2196f3;
 }
 
-.project-title {
+/* (2) portfolio-projects (2) */
+.portfolio-projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.portfolio-projects ul li:nth-child(-n + 6) {
+  margin-bottom: 30px;
+}
+
+.portfolio-project-card {
+  padding-bottom: 20px;
+  border: 1px solid #EEEEEE;
+}
+
+.portfolio-project-card .portfolio-project-title {
   font-size: 18px;
   line-height: 2;
+  letter-spacing: 1.08px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  text-align: left;
+  margin-left: 24px;
 }
 
-.project-description {
+.portfolio-project-card .portfolio-project-description {
   line-height: 1.875;
+  letter-spacing: 0.48px;
   color: var(--second-color);
+  text-align: left;
+  margin-left: 24px;
 }
+
 
 /* FOOTER */
-footer {
+.global-footer {
   background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 1154px;
 }
 
-.company-logo-footer {
+.global-footer .company-logo-footer {
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.174;
   text-decoration: none;
   color: #ffffff;
+  letter-spacing: 0.78px;
 }
 
-.company-logo-footer .logo-name-footer {
+.global-footer .company-logo-footer span {
   color: #2196f3;
 }
 
-.location-link-footer,
-.contact-link-footer {
+.global-footer .company-address {
+  margin-top: 28px;
+}
+
+.global-footer .company-address ul li:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.company-address ul li .location-link-footer,
+.company-address ul li .contact-link-footer {
   font-weight: 400;
   font-size: 14px;
   text-decoration: none;
   font-style: normal;
+  letter-spacing: 0.42px;
 }
 
 .location-link-footer {
